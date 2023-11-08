@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class Client {
     static DataOutputStream dos = null;
     static DataInputStream dis = null;
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Socket socket = new Socket();
 
         Scanner sc = new Scanner(System.in);
@@ -23,34 +23,27 @@ public class Client {
             System.out.print("사용자 아이디를 만들어주세요 : ");
             dos.writeUTF(sc.nextLine());
 
-            // 서버로부터 데이터를 읽는 로직
-            // 읽는거만 처리하는 스레드를 만들어주자!!!
-            new Thread(() -> {
-                try {
-                    while (true) {
-                        String message = dis.readUTF();
-                        System.out.println(message);
-                    }
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
-            }).start();
-
-            while (true) {
-                System.out.print(">>");
-                dos.writeUTF(sc.nextLine());
-                dos.flush();
-            }
-
         } catch (IOException e) {
             throw new RuntimeException(e);
-        } finally {
-            try {
-                dos.close();
-                socket.close();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
+        }
+
+        while (true){
+            switch (dis.readUTF()){
+                case "1": // 몇글자
+
+
+                    break;
+                case "2": // 숫자입력
+
+                    break;
+                case "3": // 결과
+
+                    break;
+                case "4": // 재시작
+
+                    break;
             }
         }
+
     }
 }
