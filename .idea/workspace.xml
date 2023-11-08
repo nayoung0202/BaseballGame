@@ -5,10 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d5f2de6-3701-4a3b-898c-3eadaf323868" name="Changes" comment="server">
-      <change afterPath="$PROJECT_DIR$/src/Client1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Client2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Server1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameSystem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -57,7 +61,12 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.Client2">
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Client1">
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Client" />
       <module name="Baseballgame" />
@@ -72,13 +81,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Client2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Client2" />
-      <module name="Baseballgame" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Server" />
       <module name="Baseballgame" />
@@ -86,12 +88,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Server1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Server1" />
+      <module name="Baseballgame" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Client2" />
         <item itemvalue="Application.Client1" />
-        <item itemvalue="Application.Server" />
         <item itemvalue="Application.Client" />
+        <item itemvalue="Application.Server" />
+        <item itemvalue="Application.Server1" />
       </list>
     </recent_temporary>
   </component>
@@ -105,6 +114,7 @@
       <updated>1699421683389</updated>
       <workItem from="1699421684399" duration="4381000" />
       <workItem from="1699426607173" duration="7682000" />
+      <workItem from="1699452908234" duration="4057000" />
     </task>
     <task id="LOCAL-00001" summary="Base">
       <option name="closed" value="true" />

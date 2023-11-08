@@ -10,11 +10,11 @@ public class Client {
         Socket socket = new Socket();
         Scanner sc = new Scanner(System.in);
         try{
-            socket.connect(new InetSocketAddress("192.168.0.140",50001));
+            socket.connect(new InetSocketAddress("192.168.55.43",50001));
             DataOutputStream dos = new DataOutputStream(socket.getOutputStream());
             DataInputStream dis = new DataInputStream(socket.getInputStream());
 
-            System.out.println("ID");
+            System.out.print("ID >> ");
             dos.writeUTF(sc.nextLine());
 
             while(true){
@@ -22,19 +22,12 @@ public class Client {
 
                 switch (sysNum){
                     case "1":
-                        System.out.println(dis.readUTF());
+                        System.out.print(dis.readUTF());
                         dos.writeUTF(sc.nextLine());
                         break;
                     case "2":
                         System.out.println(dis.readUTF());
-                        dos.writeUTF(sc.nextLine());
                         break;
-                    case "3":
-                        System.out.println(dis.readUTF());
-                        break;
-                    case "4":
-                        System.out.println(dis.readUTF());
-                        dos.writeUTF(sc.nextLine());
                     default:
                         return;
                 }
