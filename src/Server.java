@@ -18,6 +18,7 @@ public class Server {
     static String guess;
     static boolean fit;
     static boolean finish;
+    static String[] check = new String[]{"Y","Y"};
     static ServerSocket serverSocket = null;
     static ArrayList<Socket> socketList = new ArrayList<>();
     static GameSystem gm = new GameSystem();
@@ -29,7 +30,9 @@ public class Server {
                 Socket socket = serverSocket.accept();
                 socketList.add(socket);
                 new Thread(() -> {
-                    game(socket);
+                    while(check[0].equals("Y") && check[1].equals("Y")) {
+                        game(socket);
+                    }
                 }).start();
             }
 
@@ -126,11 +129,15 @@ public class Server {
 
     public static void winner(String id,Socket socket){
         try {
+            dis = new DataInputStream(socket.getInputStream());
+            dos = new DataOutputStream(socket.getOutputStream());
+
             if (socketList.indexOf(socket) == times % 2) {
                 dos.writeUTF(id + "패배! Re game? (Y/N)");
             } else {
                 dos.writeUTF(id + "승리! Re game? (Y/N)");
             }
+            check[socketList.indexOf(socket)] = dis.readUTF();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
