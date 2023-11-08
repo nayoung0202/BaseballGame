@@ -35,7 +35,7 @@ public class Client {
 
             }
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            return;
         }
     }
 }

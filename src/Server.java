@@ -2,13 +2,11 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Server {
     static ArrayList<User> userList = new ArrayList<>();
     static GameSystem gm = new GameSystem();
-    static boolean cont;
-    static boolean cont1;
-    static boolean cont2;
     public static void main(String[] args) {
         try {
             ServerSocket serverSocket = new ServerSocket(50001);
@@ -18,56 +16,28 @@ public class Server {
                 User user = new User(socket);
                 userList.add(user);
                 user.setTurn(userList.indexOf(user));
-                new Thread(() -> {
-                    game(user);
-                }).start();
+                user.setId(user.read());
             }
         } catch (Exception e){
             throw new RuntimeException(e);
         }
+
+        while(userList.stream().allMatch(User::isPlay)) game(userList);
+        for(User user : userList){
+            user.close();
+        }
     }
 
-    static void game(User user){
-        user.setId(user.read());
-        while(user.isPlay()){
-            cont = true;
-            while (cont) {
-
-                cont1 = true;
-                gm.setTimes(0);
-                gm.setPlay(true);
-                gm.gameSet(user);
-                while(cont1) {
-                    if(userList.stream().allMatch(User::isGo)){
-                        cont1 = false;
-                    }
-                }
-                while (gm.isPlay()){
-                    cont1 = true;
-                    gm.timeUp(user);
-                    while(cont1) {
-                        if(userList.stream().allMatch(User::isGo)){
-                            cont1 = false;
-                        }
-                    }
-
-                    cont2 = true;
-                    gm.guessNumber(user);
-                    while(cont2) {
-                        if(userList.stream().allMatch(User::isGo)){
-                            cont2 = false;
-                        }
-                    }
-                    gm.printNumber(user);
-                    gm.winner(user);
-
-
-                }
-
-                if(userList.stream().allMatch(User::isPlay)){
-                    cont = false;
-                }
-            }
+    static void game(List<User> users){
+        for(User user : users){
+            user.write("2");
+            user.write("게임을 시작합니다.");
+        }
+        gm.gameSet(users.get(0));
+        while(gm.isPlay()){
+            gm.guessNumber(userList.get((gm.getTimes()-1) % 2));
+            gm.printNumber(userList);
+            gm.winner(userList);
 
         }
     }

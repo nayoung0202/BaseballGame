@@ -39,14 +39,6 @@ public class User {
         this.play = play;
     }
 
-    public boolean isGo() {
-        return go;
-    }
-
-    public void setGo(boolean go) {
-        this.go = go;
-    }
-
     public void write(String s){
         try {
             DataOutputStream dos = new DataOutputStream(this.socket.getOutputStream());
@@ -65,5 +57,13 @@ public class User {
             throw new RuntimeException(e);
         }
         return input;
+    }
+
+    public void close(){
+        try {
+            this.socket.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

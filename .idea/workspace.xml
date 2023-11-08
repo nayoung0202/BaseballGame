@@ -4,16 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d5f2de6-3701-4a3b-898c-3eadaf323868" name="Changes" comment="server">
-      <change afterPath="$PROJECT_DIR$/src/Server1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="6d5f2de6-3701-4a3b-898c-3eadaf323868" name="Changes" comment="server + 스레드 실패">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Client1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client2.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameSystem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +31,20 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "s12171934"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="e1d643e1-f282-4cb9-8ae5-c68205a3a067" />
+        <option name="url" value="https://github.com/nayoung0202/BaseballGame.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
@@ -114,7 +125,7 @@
       <updated>1699421683389</updated>
       <workItem from="1699421684399" duration="4381000" />
       <workItem from="1699426607173" duration="7682000" />
-      <workItem from="1699452908234" duration="4057000" />
+      <workItem from="1699452908234" duration="7432000" />
     </task>
     <task id="LOCAL-00001" summary="Base">
       <option name="closed" value="true" />
@@ -180,7 +191,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699432710679</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="server + 스레드 실패">
+      <option name="closed" value="true" />
+      <created>1699457239724</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1699457239724</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -215,6 +234,7 @@
     <MESSAGE value="Strike Ball" />
     <MESSAGE value="create GameSystem class" />
     <MESSAGE value="server" />
-    <option name="LAST_COMMIT_MESSAGE" value="server" />
+    <MESSAGE value="server + 스레드 실패" />
+    <option name="LAST_COMMIT_MESSAGE" value="server + 스레드 실패" />
   </component>
 </project>
