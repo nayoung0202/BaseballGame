@@ -10,8 +10,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Server {
-    static DataInputStream dis;
-    static DataOutputStream dos;
     static int times;
     static int gameNum;
     static String target;
@@ -44,8 +42,8 @@ public class Server {
     public static void game(Socket socket){
         String id = "";
         try {
-            dis = new DataInputStream(socket.getInputStream());
-            dos = new DataOutputStream(socket.getOutputStream());
+            DataInputStream dis = new DataInputStream(socket.getInputStream());
+            DataOutputStream dos = new DataOutputStream(socket.getOutputStream());
             id = dis.readUTF();
             while (socketList.size() != 2){
                 Thread.sleep(100);
@@ -86,8 +84,8 @@ public class Server {
 
     public static void gameSet(Socket socket){
         try {
-            dis = new DataInputStream(socket.getInputStream());
-            dos = new DataOutputStream(socket.getOutputStream());
+            DataInputStream dis = new DataInputStream(socket.getInputStream());
+            DataOutputStream dos = new DataOutputStream(socket.getOutputStream());
             dos.writeUTF("숫자자리를 입력해주세요.");
             gameNum = Integer.parseInt(dis.readUTF());
             target = gm.createRandomNumber(gameNum);
@@ -98,8 +96,8 @@ public class Server {
 
     public static void guessNumber(Socket socket){
         try {
-            dis = new DataInputStream(socket.getInputStream());
-            dos = new DataOutputStream(socket.getOutputStream());
+            DataInputStream dis = new DataInputStream(socket.getInputStream());
+            DataOutputStream dos = new DataOutputStream(socket.getOutputStream());
             dos.writeUTF(times + "회 : ");
             guess = dis.readUTF();
             fit = true;
@@ -113,7 +111,7 @@ public class Server {
             int guessStrike = gm.strike(target,guess);
             int guessBall = gm.ball(target,guess);
             if(guessStrike == 4){finish = true;};
-            dos = new DataOutputStream(socket.getOutputStream());
+            DataOutputStream dos = new DataOutputStream(socket.getOutputStream());
 
             if(socketList.indexOf(socket) == times % 2) {
                 dos.writeUTF(times + "회 : " + guess + "\n" +
@@ -129,8 +127,8 @@ public class Server {
 
     public static void winner(String id,Socket socket){
         try {
-            dis = new DataInputStream(socket.getInputStream());
-            dos = new DataOutputStream(socket.getOutputStream());
+            DataInputStream dis = new DataInputStream(socket.getInputStream());
+            DataOutputStream dos = new DataOutputStream(socket.getOutputStream());
 
             if (socketList.indexOf(socket) == times % 2) {
                 dos.writeUTF(id + "패배! Re game? (Y/N)");
