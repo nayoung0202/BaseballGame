@@ -3,6 +3,7 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.Socket;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Client {
@@ -10,7 +11,7 @@ public class Client {
         Socket socket = new Socket();
         Scanner sc = new Scanner(System.in);
         try{
-            socket.connect(new InetSocketAddress("192.168.55.43",50001));
+            socket.connect(new InetSocketAddress("192.168.0.141",50001));
             DataOutputStream dos = new DataOutputStream(socket.getOutputStream());
             DataInputStream dis = new DataInputStream(socket.getInputStream());
 
@@ -22,8 +23,15 @@ public class Client {
 
                 switch (sysNum){
                     case "1":
-                        System.out.print(dis.readUTF());
-                        dos.writeUTF(sc.nextLine());
+                        boolean loop = true;
+                        String m = dis.readUTF();
+                        while (loop) {
+                            System.out.print(m);
+                            String s = sc.nextLine();
+                            if (Arrays.stream(s.split("")).distinct().count() == s.length()) {
+                                dos.writeUTF(s);
+                            }
+                        }
                         break;
                     case "2":
                         System.out.println(dis.readUTF());
