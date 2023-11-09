@@ -21,23 +21,9 @@ public class Server {
             throw new RuntimeException(e);
         }
 
-        while(userList.stream().allMatch(User::isPlay)) game(userList);
+        while(userList.stream().allMatch(User::isPlay)) gm.game(userList);
         for(User user : userList){
             user.close();
-        }
-    }
-
-    static void game(List<User> users){
-        gm.setPlay(true);
-        for(User user : users){
-            user.write("3");
-            user.write("게임을 시작합니다.");
-        }
-        gm.gameSet(users.get(0));
-        while(gm.isPlay()){
-            gm.guessNumber(userList.get((gm.getTimes()-1) % 2));
-            gm.printNumber(userList);
-            gm.winner(userList);
         }
     }
 }

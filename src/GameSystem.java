@@ -91,4 +91,18 @@ public class GameSystem {
             this.times++;
         }
     }
+
+    public void game(List<User> users){
+        setPlay(true);
+        for(User user : users){
+            user.write("3");
+            user.write("게임을 시작합니다.");
+        }
+        gameSet(users.get(0));
+        while(isPlay()){
+            guessNumber(users.get((getTimes()-1) % 2));
+            printNumber(users);
+            winner(users);
+        }
+    }
 }
