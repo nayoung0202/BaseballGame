@@ -28,6 +28,7 @@ public class Server {
     }
 
     static void game(List<User> users){
+        gm.setPlay(true);
         for(User user : users){
             user.write("3");
             user.write("게임을 시작합니다.");

@@ -11,6 +11,9 @@ public class GameSystem {
     public boolean isPlay() {
         return play;
     }
+    public void setPlay(Boolean play) {
+        this.play = play;
+    }
     public int getTimes() {
         return this.times;
     }
