@@ -74,7 +74,7 @@ public class Client1 {
                 }
             }
         } catch (IOException e) {
-            return;
+            System.out.println("게임이 종료되었습니다.");
         }
     }
 }

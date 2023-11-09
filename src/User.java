@@ -7,8 +7,6 @@ public class User {
     private Socket socket;
     private String id;
     private boolean play = true;
-    private boolean go = true;
-
     private int turn;
 
     public int getTurn() {

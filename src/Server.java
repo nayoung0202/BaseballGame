@@ -1,7 +1,6 @@
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Server {
@@ -38,7 +37,6 @@ public class Server {
             gm.guessNumber(userList.get((gm.getTimes()-1) % 2));
             gm.printNumber(userList);
             gm.winner(userList);
-
         }
     }
 }

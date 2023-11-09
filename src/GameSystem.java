@@ -8,22 +8,12 @@ public class GameSystem {
     private boolean play = true;
     private int times;
 
-    public int getGameNum() {
-        return gameNum;
-    }
-
-    public void setGameNum(int gameNum) {
-        this.gameNum = gameNum;
-    }
-
     public boolean isPlay() {
         return play;
     }
-
-    public void setPlay(boolean play) {
-        this.play = play;
+    public int getTimes() {
+        return this.times;
     }
-
     public String createRandomNumber(int n) {
         String num = "";
         List<Integer> arr = new ArrayList<>(List.of(0, 1, 2, 3, 4, 5, 6, 7, 8, 9));
@@ -78,7 +68,6 @@ public class GameSystem {
                         strikeBall(this.target, this.guess)[1] + " B ");
             }
         }
-        this.times++;
     }
 
     public void winner(List<User> users) {
@@ -86,19 +75,17 @@ public class GameSystem {
             for (User user : users) {
                 user.write("4");
                 if (user.getTurn() == (this.times - 1) % 2) {
-                    user.write(user.getId() + "의 패배! Re game? (Y/N) >> ");
-                } else {
                     user.write(user.getId() + "의 승리! Re game? (Y/N) >> ");
+                } else {
+                    user.write(user.getId() + "의 패배! Re game? (Y/N) >> ");
                 }
             }
             for (User user : users) {
                 user.setPlay(user.read().equalsIgnoreCase("Y"));
             }
             this.play = false;
+        } else{
+            this.times++;
         }
-    }
-
-    public int getTimes() {
-        return this.times;
     }
 }
