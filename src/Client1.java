@@ -28,19 +28,48 @@ public class Client1 {
                         while (loop) {
                             System.out.print(m);
                             String s = sc.nextLine();
-                            if (Arrays.stream(s.split("")).distinct().count() == s.length()) {
+                            if (Integer.parseInt(s) < 10 && Integer.parseInt(s) > 0) {
                                 dos.writeUTF(s);
+                                loop = false;
+                            } else {
+                                System.out.println("자릿수 틀림!");
                             }
                         }
                         break;
                     case "2":
+                        loop = true;
+                        m = dis.readUTF();
+                        while (loop) {
+                            System.out.print(m);
+                            String s = sc.nextLine();
+                            if (Arrays.stream(s.split("")).distinct().count() == s.length() && Integer.parseInt(dis.readUTF()) == s.length()) {
+                                dos.writeUTF(s);
+                                loop = false;
+                            } else {
+                                System.out.println("중복 혹은 자릿수 틀림!");
+                            }
+                        }
+                        break;
+                    case "3":
                         System.out.println(dis.readUTF());
+                        break;
+                    case "4":
+                        loop = true;
+                        m = dis.readUTF();
+                        while (loop) {
+                            System.out.print(m);
+                            String s = sc.nextLine();
+                            if (s.equalsIgnoreCase("Y") || s.equalsIgnoreCase("N")) {
+                                dos.writeUTF(s);
+                                loop = false;
+                            } else {
+                                System.out.println("양식 틀림!");
+                            }
+                        }
                         break;
                     default:
                         return;
                 }
-
-
             }
         } catch (IOException e) {
             return;

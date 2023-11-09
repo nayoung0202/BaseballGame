@@ -60,14 +60,15 @@ public class GameSystem {
     }
 
     public void guessNumber(User user) {
-        user.write("1");
+        user.write("2");
+        user.write(String.valueOf(gameNum));
         user.write(this.times + "회. " + user.getId() + "의 턴 -> ");
         this.guess = user.read();
     }
 
     public void printNumber(List<User> users) {
         for(User user : users) {
-            user.write("2");
+            user.write("3");
             if (user.getTurn() == (this.times - 1) % 2) {
                 user.write(strikeBall(this.target, this.guess)[0] + " S " +
                         strikeBall(this.target, this.guess)[1] + " B ");
@@ -83,7 +84,7 @@ public class GameSystem {
     public void winner(List<User> users) {
         if (strikeBall(target, guess)[0] == gameNum) {
             for (User user : users) {
-                user.write("1");
+                user.write("4");
                 if (user.getTurn() == (this.times - 1) % 2) {
                     user.write(user.getId() + "의 패배! Re game? (Y/N) >> ");
                 } else {
