@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d5f2de6-3701-4a3b-898c-3eadaf323868" name="Changes" comment="server + 스레드 실패">
+    <list default="true" id="6d5f2de6-3701-4a3b-898c-3eadaf323868" name="Changes" comment="server 스레드X ver 3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Client1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +75,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Client">
+  <component name="RunManager" selected="Application.Client1">
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Client" />
       <module name="Baseballgame" />
@@ -112,9 +113,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Client1" />
         <item itemvalue="Application.Client" />
         <item itemvalue="Application.Server" />
-        <item itemvalue="Application.Client1" />
         <item itemvalue="Application.Client2" />
         <item itemvalue="Application.Client1" />
       </list>
@@ -204,7 +205,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699457239724</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="server 스레드X ver 3">
+      <option name="closed" value="true" />
+      <created>1699490627194</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1699490627194</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,6 +249,7 @@
     <MESSAGE value="create GameSystem class" />
     <MESSAGE value="server" />
     <MESSAGE value="server + 스레드 실패" />
-    <option name="LAST_COMMIT_MESSAGE" value="server + 스레드 실패" />
+    <MESSAGE value="server 스레드X ver 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="server 스레드X ver 3" />
   </component>
 </project>

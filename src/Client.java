@@ -17,14 +17,15 @@ public class Client {
 
             System.out.print("ID >> ");
             dos.writeUTF(sc.nextLine());
-
+            boolean loop;
+            String m;
             while(true){
                 String sysNum = dis.readUTF();
 
                 switch (sysNum){
                     case "1":
-                        boolean loop = true;
-                        String m = dis.readUTF();
+                        loop = true;
+                        m = dis.readUTF();
                         while (loop) {
                             System.out.print(m);
                             String s = sc.nextLine();
@@ -38,11 +39,12 @@ public class Client {
                         break;
                     case "2":
                         loop = true;
+                        int num = Integer.parseInt(dis.readUTF());
                         m = dis.readUTF();
                         while (loop) {
                             System.out.print(m);
                             String s = sc.nextLine();
-                            if (Arrays.stream(s.split("")).distinct().count() == s.length() && Integer.parseInt(dis.readUTF()) == s.length()) {
+                            if (Arrays.stream(s.split("")).distinct().count() == s.length() && num == s.length()) {
                                 dos.writeUTF(s);
                                 loop = false;
                             } else {

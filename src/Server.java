@@ -30,7 +30,7 @@ public class Server {
 
     static void game(List<User> users){
         for(User user : users){
-            user.write("2");
+            user.write("3");
             user.write("게임을 시작합니다.");
         }
         gm.gameSet(users.get(0));
